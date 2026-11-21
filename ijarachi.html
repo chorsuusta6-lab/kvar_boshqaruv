@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ijarachilar</title>
+  <link rel="stylesheet" href="ijarachi.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="icon-192.png">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- SARLAVHA -->
+  <header class="header">
+    <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+    <h1 id="kvTitle">Ijarachilar</h1>
+    <button class="btn btn-primary" id="btnAdd">+ Ijarachi</button>
+  </header>
+
+  <!-- IJARACHILAR RO'YXATI -->
+  <main class="container" id="listContainer">
+    <p class="loading">Yuklanmoqda...</p>
+  </main>
+
+  <!-- IJARACHI QO'SHISH/TAHRIRLASH MODAL -->
+  <div class="modal-overlay" id="formModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="formTitle">Ijarachi qo'shish</h3>
+        <button class="modal-close" id="formClose">✖</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="fId">
+
+        <label>Profil rasmi</label>
+        <input type="file" id="fProfil" accept="image/*">
+
+        <label>Ismi *</label>
+        <input type="text" id="fIsmi" placeholder="Alisher Karimov">
+
+        <label>No'meri</label>
+        <input type="text" id="fNomer" placeholder="+998 90 123 45 67">
+
+        <label>Telegram nik</label>
+        <input type="text" id="fTelegram" placeholder="@alisher">
+
+        <label>Oylik to'lov * (so'm)</label>
+        <input type="number" id="fOylik" placeholder="1500000" min="0">
+
+        <label>Kelgan kuni *</label>
+        <input type="date" id="fKelgan">
+
+        <label>Honasi *</label>
+        <input type="text" id="fHona" placeholder="1-xona">
+
+        <label>Karavati *</label>
+        <input type="text" id="fKaravat" placeholder="1-karavat">
+
+        <label>Pasport oldi</label>
+        <input type="file" id="fPasOld" accept="image/*">
+
+        <label>Pasport orqasi</label>
+        <input type="file" id="fPasOrqa" accept="image/*">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="formCancel">Bekor qilish</button>
+        <button class="btn btn-primary" id="formSave">Saqlash</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TO'LOV MODAL -->
+  <div class="modal-overlay" id="payModal">
+    <div class="modal modal-small">
+      <div class="modal-header">
+        <h3>To'lov qilish</h3>
+        <button class="modal-close" id="payClose">✖</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="payId">
+        <p class="pay-name" id="payName"></p>
+        <label>Summa * (so'm)</label>
+        <input type="number" id="paySumma" placeholder="1500000" min="1">
+        <label>Izoh</label>
+        <input type="text" id="payIzoh" placeholder="Noyabr oyi to'lovi">
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="payCancel">Bekor qilish</button>
+        <button class="btn btn-primary" id="paySave">To'lash</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- XUJJATLAR MODAL -->
+  <div class="modal-overlay" id="docModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Xujjatlar</h3>
+        <button class="modal-close" id="docClose">✖</button>
+      </div>
+      <div class="modal-body doc-body" id="docBody"></div>
+    </div>
+  </div>
+
+  <!-- O'CHIRISH TASDIQLASH MODAL -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal modal-small">
+      <div class="modal-header">
+        <h3>O'chirishni tasdiqlang</h3>
+      </div>
+      <div class="modal-body">
+        <p>Rostdan ham <b id="deleteIjarachiNomi"></b> ni o'chirmoqchimisiz?</p>
+        <p class="warning">Barcha to'lov tarixi va ma'lumotlar ham o'chadi!</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" id="deleteCancel">Bekor qilish</button>
+        <button class="btn btn-danger" id="deleteConfirm">O'chirish</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PASTKI TUGMALAR -->
+  <nav class="bottom-nav">
+    <button class="nav-btn active" data-page="ijarachi">👥 Ijarachi</button>
+    <button class="nav-btn" data-page="xarajat">💸 Xarajat</button>
+    <button class="nav-btn" data-page="hisobot">📊 Hisobot</button>
+    <button class="nav-btn" data-page="navbatchi">👮 Navbatchi</button>
+  </nav>
+
+  <script src="config.js"></script>
+  <script src="ijarachi.js"></script>
+</body>
+</html>

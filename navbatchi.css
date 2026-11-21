@@ -1,0 +1,163 @@
+/* ============================================
+   NAVBATCHI SAHIFASI — USLUBLAR
+   ============================================ */
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+body { background: #f3f4f6; color: #1f2937; padding-bottom: 80px; }
+
+/* SARLAVHA */
+.header {
+  background: #2563eb; color: #fff;
+  padding: 14px 18px;
+  display: flex; align-items: center; gap: 12px;
+  position: sticky; top: 0; z-index: 50;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+.header h1 { font-size: 18px; flex: 1; }
+.back-btn {
+  background: rgba(255,255,255,0.2); border: none; color: #fff;
+  width: 36px; height: 36px; border-radius: 50%;
+  font-size: 18px; cursor: pointer;
+}
+
+/* TABLAR */
+.tabs {
+  display: flex; background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  position: sticky; top: 64px; z-index: 40;
+}
+.tab {
+  flex: 1; background: none; border: none;
+  padding: 14px 10px; font-size: 13px;
+  color: #6b7280; cursor: pointer; font-weight: 600;
+  border-bottom: 3px solid transparent;
+}
+.tab.active {
+  color: #2563eb; border-bottom-color: #2563eb;
+}
+
+/* KONTEYNER */
+.container { padding: 16px; max-width: 700px; margin: 0 auto; }
+.tab-content { display: none; }
+.tab-content.active { display: block; }
+
+/* GURUH */
+.group { margin-bottom: 20px; }
+.group-head {
+  font-size: 14px; font-weight: 700;
+  padding: 8px 12px; border-radius: 8px;
+  margin-bottom: 10px;
+}
+.group-head.avvalgi { background: #e5e7eb; color: #374151; }
+.group-head.bugungi { background: #dbeafe; color: #1e40af; }
+.group-head.keyingi { background: #ede9fe; color: #6d28d9; }
+
+/* NAVBATCHI KARTASI */
+.nav-card {
+  background: #fff; border-radius: 10px;
+  padding: 14px; margin-bottom: 10px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.nav-card-header {
+  display: flex; justify-content: space-between; align-items: center;
+  cursor: pointer;
+}
+.nav-card-header h3 { font-size: 14px; }
+.nav-card-header .vazifa {
+  font-size: 12px; color: #6b7280; margin-top: 2px;
+}
+.nav-card-header .sana {
+  font-size: 12px; color: #2563eb; font-weight: 600;
+}
+
+/* HOLAT BELGILARI */
+.holat-badge {
+  font-size: 12px; padding: 4px 10px; border-radius: 6px; font-weight: 600;
+}
+.holat-badge.bajardi { background: #dcfce7; color: #166534; }
+.holat-badge.bajarmadi { background: #fee2e2; color: #991b1b; }
+.holat-badge.almashtirildi { background: #fef3c7; color: #92400e; }
+.holat-badge.kutilmoqda { background: #e5e7eb; color: #374151; }
+
+/* TUGMALAR (BUGUNGI) */
+.nav-actions {
+  display: flex; gap: 8px; margin-top: 12px;
+  padding-top: 12px; border-top: 1px solid #f3f4f6;
+}
+.nav-actions button {
+  flex: 1; border: none; border-radius: 8px;
+  padding: 10px 6px; font-size: 12px;
+  font-weight: 600; cursor: pointer;
+}
+.btn-bajarmadi { background: #fee2e2; color: #dc2626; }
+.btn-bajarmadi:hover { background: #fecaca; }
+.btn-almashtir { background: #fef3c7; color: #92400e; }
+.btn-almashtir:hover { background: #fde68a; }
+.btn-bajardi { background: #dcfce7; color: #16a34a; }
+.btn-bajardi:hover { background: #bbf7d0; }
+.nav-actions.hidden { display: none; }
+
+/* KARTA */
+.card {
+  background: #fff; border-radius: 12px; padding: 18px;
+  margin-bottom: 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.card h2 { font-size: 15px; margin-bottom: 14px; }
+
+/* FORMA */
+.form-group { margin-bottom: 12px; }
+.form-group label {
+  display: block; font-size: 13px; font-weight: 600;
+  margin-bottom: 6px; color: #374151;
+}
+.form-group input {
+  width: 100%; padding: 11px 12px;
+  border: 1px solid #d1d5db; border-radius: 8px;
+  font-size: 14px; outline: none;
+}
+.form-group input:focus { border-color: #2563eb; }
+
+/* VAZIFALAR */
+.vazifa-item {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 10px 12px; background: #f9fafb;
+  border-radius: 8px; margin-bottom: 8px;
+}
+.vazifa-item span { font-size: 14px; }
+.vazifa-item button {
+  background: #fee2e2; color: #dc2626; border: none;
+  width: 30px; height: 30px; border-radius: 6px;
+  cursor: pointer; font-size: 14px;
+}
+.add-vazifa-row {
+  display: flex; gap: 8px; margin-top: 12px;
+}
+.add-vazifa-row input {
+  flex: 1; padding: 10px 12px;
+  border: 1px solid #d1d5db; border-radius: 8px; font-size: 14px;
+}
+.hint { font-size: 12px; color: #6b7280; margin-top: 10px; text-align: center; }
+
+/* TUGMALAR */
+.btn {
+  border: none; border-radius: 8px; padding: 11px 18px;
+  font-size: 14px; font-weight: 600; cursor: pointer;
+}
+.btn-primary { background: #2563eb; color: #fff; }
+.btn-primary:hover { background: #1d4ed8; }
+.btn-full { width: 100%; margin-top: 6px; }
+
+.loading { text-align: center; color: #6b7280; padding: 16px; font-size: 13px; }
+
+/* PASTKI NAVIGATSIYA */
+.bottom-nav {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #fff; display: grid; grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #e5e7eb; z-index: 40;
+}
+.nav-btn {
+  background: none; border: none; padding: 12px 6px;
+  font-size: 12px; color: #6b7280; cursor: pointer;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.nav-btn.active { color: #2563eb; font-weight: 700; }

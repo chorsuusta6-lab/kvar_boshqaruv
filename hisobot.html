@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hisobot</title>
+  <link rel="stylesheet" href="hisobot.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="icon-192.png">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+</head>
+<body>
+
+  <!-- SARLAVHA -->
+  <header class="header">
+    <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+    <h1>📊 Hisobot</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- JORIY OY STATISTIKA -->
+    <section class="stats">
+      <div class="stat-card">
+        <span class="stat-label">💰 Oylik tushum</span>
+        <span class="stat-value" id="statTushum">—</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">💸 Oylik xarajat</span>
+        <span class="stat-value red" id="statXarajat">—</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-label">📈 Sof foyda</span>
+        <span class="stat-value green" id="statFoyda">—</span>
+      </div>
+    </section>
+
+    <!-- DAVR TANLASH -->
+    <section class="card">
+      <h2>📅 Davr tanlash</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Boshlanish</label>
+          <input type="date" id="davrBosh">
+        </div>
+        <div class="form-group">
+          <label>Tugash</label>
+          <input type="date" id="davrOxir">
+        </div>
+      </div>
+      <button class="btn btn-primary btn-full" id="btnXlsHisobot">📥 Hisobotni .xls yuklab olish</button>
+    </section>
+
+    <!-- OYLAR KESIMIDA -->
+    <section class="card">
+      <h2>📊 Oylar kesimida</h2>
+      <div class="table-wrap">
+        <table id="oylarTable">
+          <thead>
+            <tr>
+              <th>Oy</th>
+              <th>Tushum</th>
+              <th>Xarajat</th>
+              <th>Sof foyda</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="4" class="loading">Yuklanmoqda...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- XARAJATLAR RO'YXATI -->
+    <section class="card">
+      <h2>📋 Xarajatlar ro'yxati (oylar bo'yicha)</h2>
+      <div id="xarajatRoyxat">
+        <p class="loading">Yuklanmoqda...</p>
+      </div>
+    </section>
+
+    <!-- IJARACHI TO'LOV TARIXI -->
+    <section class="card">
+      <h2>📥 Ijarachi to'lov tarixini yuklab olish</h2>
+      <div class="form-group">
+        <label>Ijarachi tanlang</label>
+        <select id="ijarachiSelect">
+          <option value="">— Tanlang —</option>
+        </select>
+      </div>
+      <button class="btn btn-primary btn-full" id="btnXlsTolov">📥 .xls yuklab olish</button>
+    </section>
+
+  </main>
+
+  <!-- PASTKI TUGMALAR -->
+  <nav class="bottom-nav">
+    <button class="nav-btn" data-page="ijarachi">👥 Ijarachi</button>
+    <button class="nav-btn" data-page="xarajat">💸 Xarajat</button>
+    <button class="nav-btn active" data-page="hisobot">📊 Hisobot</button>
+    <button class="nav-btn" data-page="navbatchi">👮 Navbatchi</button>
+  </nav>
+
+  <script src="config.js"></script>
+  <script src="hisobot.js"></script>
+</body>
+</html>

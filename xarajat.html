@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Xarajatlar</title>
+  <link rel="stylesheet" href="xarajat.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="icon" href="icon-192.png">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+  <!-- SARLAVHA -->
+  <header class="header">
+    <button class="back-btn" onclick="window.location.href='index.html'">←</button>
+    <h1>💸 Xarajatlar</h1>
+  </header>
+
+  <main class="container">
+
+    <!-- YANGI XARAJAT -->
+    <section class="card">
+      <h2>➕ Yangi xarajat qo'shish</h2>
+      <div class="form-group">
+        <label>Kategoriya *</label>
+        <select id="xKategoriya">
+          <option value="Kommunal">💡 Kommunal</option>
+          <option value="Ta'mirlash">🔧 Ta'mirlash</option>
+          <option value="Oziq-ovqat">🍞 Oziq-ovqat</option>
+          <option value="Tozalash">🧹 Tozalash</option>
+          <option value="Boshqa">📦 Boshqa</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>To'lov miqdori * (so'm)</label>
+        <input type="number" id="xSumma" placeholder="250000" min="1">
+      </div>
+      <div class="form-group">
+        <label>Izoh</label>
+        <input type="text" id="xIzoh" placeholder="Noyabr oyi elektr to'lovi">
+      </div>
+      <button class="btn btn-primary btn-full" id="btnAddXarajat">➕ Qo'shish</button>
+    </section>
+
+    <!-- OXIRGI 10 TA -->
+    <section class="card">
+      <h2>📋 Oxirgi 10 ta xarajat</h2>
+      <div id="xarajatList">
+        <p class="loading">Yuklanmoqda...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PASTKI TUGMALAR -->
+  <nav class="bottom-nav">
+    <button class="nav-btn" data-page="ijarachi">👥 Ijarachi</button>
+    <button class="nav-btn active" data-page="xarajat">💸 Xarajat</button>
+    <button class="nav-btn" data-page="hisobot">📊 Hisobot</button>
+    <button class="nav-btn" data-page="navbatchi">👮 Navbatchi</button>
+  </nav>
+
+  <script src="config.js"></script>
+  <script src="xarajat.js"></script>
+</body>
+</html>
